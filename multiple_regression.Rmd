@@ -1,0 +1,19 @@
+---
+title: "Trying an R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+library(DAAG)
+data(allbacks)
+str(allbacks)
+```
+
+```{r}
+# multiple regression with volume and cover as explanatory
+book_mlr = lm(weight ~ volume + cover, data=allbacks)
+summary(book_mlr)
+```
+$\hat{weight} = 197.96 + 0.72volume - 184.05cover:pb$
+
